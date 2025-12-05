@@ -1,0 +1,687 @@
+/* Partners Page Styles */
+
+/* Partners Hero Section */
+.partners-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, #000 0%, #1a0b2e 50%, #2d1b69 100%);
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.partners-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.partners-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.partners-title .highlight {
+    background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.partners-subtitle {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.partners-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #8b5cf6;
+    color: #8b5cf6;
+}
+
+.btn-secondary:hover {
+    background: #8b5cf6;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-primary.large, .btn-secondary.large {
+    padding: 18px 40px;
+    font-size: 18px;
+}
+
+/* Background Elements */
+.partners-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.element {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.element-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.element-2 {
+    top: 60%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.element-3 {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.element-4 {
+    top: 40%;
+    right: 30%;
+    animation-delay: 3s;
+}
+
+.element-5 {
+    bottom: 60%;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+/* Partners Grid Section */
+.partners-grid {
+    padding: 100px 0;
+    background: #000;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.section-subtitle {
+    font-size: 20px;
+    color: #8b5cf6;
+    font-weight: 500;
+}
+
+.partners-grid-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.partner-category {
+    margin-bottom: 60px;
+}
+
+.category-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.partners-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.partner-card {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.partner-card:hover::before {
+    left: 100%;
+}
+
+.partner-card:hover {
+    transform: translateY(-10px);
+    border-color: #8b5cf6;
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+.partner-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.partner-logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.partner-logo .logo-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Logo specific styles */
+.binance-logo {
+    background: #f3ba2f !important;
+}
+
+.binance-logo .logo-text {
+    color: #000;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.ftx-logo {
+    background: #00d4aa !important;
+}
+
+.ftx-logo .logo-text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.huobi-logo {
+    background: #ff6b35 !important;
+}
+
+.huobi-logo .logo-text {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.okx-logo {
+    background: #000 !important;
+}
+
+.okx-logo .logo-text {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mt5-logo {
+    background: #3366cc !important;
+}
+
+.mt5-logo .logo-text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.ctrader-logo {
+    background: #00bfa5 !important;
+}
+
+.ctrader-logo .logo-text {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.aws-logo {
+    background: #ff9900 !important;
+}
+
+.aws-logo .logo-text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.google-logo {
+    background: #4285f4 !important;
+}
+
+.google-logo .logo-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.partner-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.partner-description {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.partner-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.stat {
+    font-size: 14px;
+    color: #8b5cf6;
+    font-weight: 600;
+    background: rgba(139, 92, 246, 0.2);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+/* Partnership Benefits Section */
+.partnership-benefits {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1a0b2e 0%, #2d1b69 100%);
+}
+
+.benefits-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.benefits-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.benefits-subtitle {
+    font-size: 20px;
+    color: #8b5cf6;
+    font-weight: 500;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.benefit-card:hover::before {
+    opacity: 1;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    border-color: #8b5cf6;
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+.benefit-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.benefit-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.benefit-description {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+.benefit-highlight {
+    font-size: 18px;
+    font-weight: 700;
+    color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
+/* CTA Section */
+.partners-cta-section {
+    padding: 100px 0;
+    background: #000;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.cta-description {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.cta-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #8b5cf6;
+    margin-bottom: 5px;
+}
+
+.stat-item .stat-label {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Navigation Active State */
+.nav-link.active {
+    color: #8b5cf6 !important;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: #8b5cf6;
+    border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .partners-title {
+        font-size: 42px;
+    }
+    
+    .section-title,
+    .benefits-title,
+    .cta-title {
+        font-size: 36px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .partners-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .cta-stats {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-hero {
+        padding-top: 100px;
+    }
+    
+    .partners-title {
+        font-size: 32px;
+    }
+    
+    .partners-subtitle {
+        font-size: 18px;
+    }
+    
+    .partners-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-title,
+    .benefits-title,
+    .cta-title {
+        font-size: 28px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .partners-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .category-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-title {
+        font-size: 28px;
+    }
+    
+    .section-title,
+    .benefits-title,
+    .cta-title {
+        font-size: 24px;
+    }
+    
+    .partner-card,
+    .benefit-card {
+        padding: 20px;
+    }
+    
+    .partner-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .partner-logo img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .benefit-icon {
+        font-size: 36px;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Loading animation for partner cards */
+.partner-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.partner-card:nth-child(1) { animation-delay: 0.1s; }
+.partner-card:nth-child(2) { animation-delay: 0.2s; }
+.partner-card:nth-child(3) { animation-delay: 0.3s; }
+.partner-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Benefit cards animation */
+.benefit-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.benefit-card:nth-child(1) { animation-delay: 0.1s; }
+.benefit-card:nth-child(2) { animation-delay: 0.2s; }
+.benefit-card:nth-child(3) { animation-delay: 0.3s; }
+.benefit-card:nth-child(4) { animation-delay: 0.4s; }
+.benefit-card:nth-child(5) { animation-delay: 0.5s; }
+.benefit-card:nth-child(6) { animation-delay: 0.6s; }

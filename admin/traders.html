@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capico Admin - Управление трейдерами</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark admin-header">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fas fa-cog me-2 text-primary"></i>
+                <span class="brand-text">Capico Admin</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>
+                            Дашборд
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="tradingDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-chart-line me-1"></i>
+                            Торговля
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="traders.html">Трейдеры</a></li>
+                            <li><a class="dropdown-item" href="orders.html">Ордера</a></li>
+                            <li><a class="dropdown-item" href="bots.html">Боты</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contentDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-file-alt me-1"></i>
+                            Контент
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="articles.html">Статьи</a></li>
+                            <li><a class="dropdown-item" href="news.html">Новости</a></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="users.html">
+                            <i class="fas fa-users me-1"></i>
+                            Пользователи
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">
+                            <i class="fas fa-cog me-1"></i>
+                            Настройки
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-nav">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i>
+                            Администратор
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Профиль</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Настройки</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../index.html"><i class="fas fa-sign-out-alt me-2"></i>Выйти</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky pt-3">
+                    <div class="sidebar-section">
+                        <h6 class="sidebar-heading">Основные</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">
+                                    <i class="fas fa-tachometer-alt me-2"></i>
+                                    Дашборд
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="analytics.html">
+                                    <i class="fas fa-chart-bar me-2"></i>
+                                    Аналитика
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h6 class="sidebar-heading">Торговля</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="traders.html">
+                                    <i class="fas fa-users me-2"></i>
+                                    Трейдеры
+                                    <span class="badge bg-primary ms-2">24</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="orders.html">
+                                    <i class="fas fa-shopping-cart me-2"></i>
+                                    Ордера
+                                    <span class="badge bg-success ms-2">156</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="bots.html">
+                                    <i class="fas fa-robot me-2"></i>
+                                    Боты
+                                    <span class="badge bg-info ms-2">8</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h6 class="sidebar-heading">Контент</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="articles.html">
+                                    <i class="fas fa-file-alt me-2"></i>
+                                    Статьи
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="news.html">
+                                    <i class="fas fa-newspaper me-2"></i>
+                                    Новости
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faq.html">
+                                    <i class="fas fa-question-circle me-2"></i>
+                                    FAQ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h6 class="sidebar-heading">Система</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="users.html">
+                                    <i class="fas fa-user-friends me-2"></i>
+                                    Пользователи
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="settings.html">
+                                    <i class="fas fa-cogs me-2"></i>
+                                    Настройки
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Управление трейдерами</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="exportTraders()">
+                                <i class="fas fa-download me-1"></i>
+                                Экспорт
+                            </button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addTraderModal">
+                            <i class="fas fa-plus me-1"></i>
+                            Добавить трейдера
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="searchTrader" class="form-label">Поиск</label>
+                                <input type="text" class="form-control" id="searchTrader" placeholder="Имя, email...">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="filterLevel" class="form-label">Уровень</label>
+                                <select class="form-select" id="filterLevel">
+                                    <option value="">Все уровни</option>
+                                    <option value="beginner">Начинающий</option>
+                                    <option value="intermediate">Средний</option>
+                                    <option value="advanced">Продвинутый</option>
+                                    <option value="expert">Эксперт</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="filterStatus" class="form-label">Статус</label>
+                                <select class="form-select" id="filterStatus">
+                                    <option value="">Все статусы</option>
+                                    <option value="active">Активный</option>
+                                    <option value="inactive">Неактивный</option>
+                                    <option value="suspended">Заблокирован</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="filterDate" class="form-label">Дата регистрации</label>
+                                <input type="date" class="form-control" id="filterDate">
+                            </div>
+                            <div class="col-md-2 d-flex align-items-end">
+                                <button type="button" class="btn btn-outline-primary w-100" onclick="applyFilters()">
+                                    <i class="fas fa-search me-1"></i>
+                                    Фильтр
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Traders Table -->
+                <div class="card shadow">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Список трейдеров</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="tradersTable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
+                                        </th>
+                                        <th onclick="sortTable('id')">
+                                            ID <i class="fas fa-sort"></i>
+                                        </th>
+                                        <th onclick="sortTable('name')">
+                                            Имя <i class="fas fa-sort"></i>
+                                        </th>
+                                        <th onclick="sortTable('email')">
+                                            Email <i class="fas fa-sort"></i>
+                                        </th>
+                                        <th onclick="sortTable('level')">
+                                            Уровень <i class="fas fa-sort"></i>
+                                        </th>
+                                        <th onclick="sortTable('balance')">
+                                            Баланс <i class="fas fa-sort"></i>
+                                        </th>
+                                        <th onclick="sortTable('status')">
+                                            Статус <i class="fas fa-sort"></i>
+                                        </th>
+                                        <th onclick="sortTable('registration')">
+                                            Регистрация <i class="fas fa-sort"></i>
+                                        </th>
+                                        <th>Действия</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="trader-checkbox" value="1"></td>
+                                        <td>#001</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar me-2">ИП</div>
+                                                <div>
+                                                    <div class="fw-bold">Иван Петров</div>
+                                                    <small class="text-muted">@ivan_trader</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>ivan@example.com</td>
+                                        <td><span class="badge bg-success">Эксперт</span></td>
+                                        <td class="text-success">$15,250.00</td>
+                                        <td><span class="badge bg-success">Активный</span></td>
+                                        <td>15.01.2024</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button class="btn btn-sm btn-outline-primary" onclick="viewTrader(1)" title="Просмотр">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning" onclick="editTrader(1)" title="Редактировать">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-info" onclick="viewTraderStats(1)" title="Статистика">
+                                                    <i class="fas fa-chart-bar"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" onclick="deleteTrader(1)" title="Удалить">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="trader-checkbox" value="2"></td>
+                                        <td>#002</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar me-2">МС</div>
+                                                <div>
+                                                    <div class="fw-bold">Мария Сидорова</div>
+                                                    <small class="text-muted">@maria_crypto</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>maria@example.com</td>
+                                        <td><span class="badge bg-warning">Средний</span></td>
+                                        <td class="text-success">$8,750.50</td>
+                                        <td><span class="badge bg-success">Активный</span></td>
+                                        <td>14.01.2024</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button class="btn btn-sm btn-outline-primary" onclick="viewTrader(2)" title="Просмотр">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning" onclick="editTrader(2)" title="Редактировать">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-info" onclick="viewTraderStats(2)" title="Статистика">
+                                                    <i class="fas fa-chart-bar"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" onclick="deleteTrader(2)" title="Удалить">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="trader-checkbox" value="3"></td>
+                                        <td>#003</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar me-2">АК</div>
+                                                <div>
+                                                    <div class="fw-bold">Алексей Козлов</div>
+                                                    <small class="text-muted">@alex_trading</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>alex@example.com</td>
+                                        <td><span class="badge bg-info">Продвинутый</span></td>
+                                        <td class="text-success">$22,100.00</td>
+                                        <td><span class="badge bg-warning">Неактивный</span></td>
+                                        <td>13.01.2024</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button class="btn btn-sm btn-outline-primary" onclick="viewTrader(3)" title="Просмотр">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning" onclick="editTrader(3)" title="Редактировать">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-info" onclick="viewTraderStats(3)" title="Статистика">
+                                                    <i class="fas fa-chart-bar"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" onclick="deleteTrader(3)" title="Удалить">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Bulk Actions -->
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-sm btn-outline-success" onclick="bulkAction('activate')">
+                                        <i class="fas fa-check me-1"></i>
+                                        Активировать
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-warning" onclick="bulkAction('suspend')">
+                                        <i class="fas fa-pause me-1"></i>
+                                        Заблокировать
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="bulkAction('delete')">
+                                        <i class="fas fa-trash me-1"></i>
+                                        Удалить
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="text-muted">Выбрано: <span id="selectedCount">0</span> трейдеров</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation" class="mt-4">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Предыдущая</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Следующая</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add Trader Modal -->
+    <div class="modal fade" id="addTraderModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Добавить трейдера</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addTraderForm">
+                        <div class="mb-3">
+                            <label for="traderName" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="traderName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="traderEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="traderEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="traderUsername" class="form-label">Имя пользователя</label>
+                            <input type="text" class="form-control" id="traderUsername" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="traderBalance" class="form-label">Начальный баланс</label>
+                            <input type="number" class="form-control" id="traderBalance" step="0.01" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="traderLevel" class="form-label">Уровень</label>
+                            <select class="form-select" id="traderLevel" required>
+                                <option value="">Выберите уровень</option>
+                                <option value="beginner">Начинающий</option>
+                                <option value="intermediate">Средний</option>
+                                <option value="advanced">Продвинутый</option>
+                                <option value="expert">Эксперт</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="traderPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="traderPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="traderActive">
+                                <label class="form-check-label" for="traderActive">
+                                    Активный трейдер
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="addTrader()">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Trader Modal -->
+    <div class="modal fade" id="editTraderModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Редактировать трейдера</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editTraderForm">
+                        <input type="hidden" id="editTraderId">
+                        <div class="mb-3">
+                            <label for="editTraderName" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="editTraderName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editTraderEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editTraderEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editTraderUsername" class="form-label">Имя пользователя</label>
+                            <input type="text" class="form-control" id="editTraderUsername" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editTraderBalance" class="form-label">Баланс</label>
+                            <input type="number" class="form-control" id="editTraderBalance" step="0.01" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editTraderLevel" class="form-label">Уровень</label>
+                            <select class="form-select" id="editTraderLevel" required>
+                                <option value="beginner">Начинающий</option>
+                                <option value="intermediate">Средний</option>
+                                <option value="advanced">Продвинутый</option>
+                                <option value="expert">Эксперт</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editTraderStatus" class="form-label">Статус</label>
+                            <select class="form-select" id="editTraderStatus" required>
+                                <option value="active">Активный</option>
+                                <option value="inactive">Неактивный</option>
+                                <option value="suspended">Заблокирован</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="updateTrader()">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Trader Stats Modal -->
+    <div class="modal fade" id="traderStatsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Статистика трейдера</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Общая прибыль</h6>
+                                    <h3 class="text-success">+$2,450.00</h3>
+                                    <small class="text-muted">+12.5% за месяц</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Количество сделок</h6>
+                                    <h3 class="text-primary">156</h3>
+                                    <small class="text-muted">Успешных: 89%</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Средняя сделка</h6>
+                                    <h3 class="text-info">$245.30</h3>
+                                    <small class="text-muted">За последний месяц</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Рейтинг</h6>
+                                    <h3 class="text-warning">4.8/5</h3>
+                                    <small class="text-muted">На основе отзывов</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/traders.js"></script>
+</body>
+</html>
